@@ -7,10 +7,15 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="/javascripts/formvalidate.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -29,6 +34,70 @@
       </header>
       <section>
         <h3>
+<div class="col-md-8">
+<form class="form-horizontal" method="POST">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Create Monitor</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="name">Name</label>
+  <div class="col-md-4">
+  <input id="name" name="name" placeholder="Ford Prefect" class="form-control input-md text" required="" type="text">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="ips">IPs</label>
+  <div class="col-md-4">
+  <input id="ips" name="ips" placeholder="17.29.96.42, 17.29.42.96" class="form-control input-md ip" required="" type="text">
+  </div>
+</div>
+
+{% include "email_submit_fields.html" %}
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email">Email</label>
+  <div class="col-md-6">
+  <input id="email" name="email" placeholder="adent@akamai.com, fenchurch@akamai.com" class="form-control input-md email" required="" type="text">
+  <span class="help-block">List of emails to send summary to</span>
+  </div>
+</div>
+
+<!-- Button Drop Down -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="interval">Email Interval</label>
+  <div class="col-md-4">
+    <div class="input-group interval">
+      <input id="interval" name="interval-value" class="form-control int" value="1" required="" type="text">
+      <div class="input-group-btn">
+        <select name="interval-type" class="selectpicker" data-width="auto">
+          <option>Days</option>
+          <option>Hours</option>
+          <option>Minutes</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit"></label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-primary">Start!</button>
+  </div>
+</div>
+
+
+</fieldset>
+</form>
+</div>
+
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
@@ -61,7 +130,6 @@ $ git checkout gh-pages
 <p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/sunfinite">sunfinite</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
