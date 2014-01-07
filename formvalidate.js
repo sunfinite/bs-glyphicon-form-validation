@@ -109,7 +109,7 @@ $(document).ready(function() {
         var value = obj.val();
         
         if(!value.match(regEx) || value <= 0) {
-            fail(obj, 'Invalid positive number');
+            fail(obj, 'Invalid positive integer');
             return;
         }
         success(obj);
