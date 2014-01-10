@@ -1,6 +1,6 @@
 $(document).ready(function() {
     function validateForm(formObj) {
-        var n_fields = formObj.find('input');
+        var n_fields = formObj.find('input[type!=submit]');
         var invalid = formObj.find('.validity[valid=false]');
         var valid = formObj.find('.validity[valid=true]');
         if (n_fields.length > 0 && valid.length == 0 && invalid.length == 0) {
